@@ -1,0 +1,11 @@
+torch
+torchvision
+timm
+scikit-learn
+pandas
+pillow
+matplotlib
+seaborn
+tqdm
+huggingface-hub>=0.33.5
+opencv-python
