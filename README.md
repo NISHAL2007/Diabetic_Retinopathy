@@ -16,6 +16,30 @@ python_version: "3.10"
 
 An end-to-end deep learning pipeline to classify Diabetic Retinopathy severity from retinal fundus images using PyTorch, EfficientNet-B3, Focal Loss, and a premium Next.js dashboard + Gradio console.
 
+![Proliferative DR Diagnostic Interface](assets/proliferative_dr.png)
+
+---
+
+## 📖 About the Project
+
+Diabetic Retinopathy (DR) is one of the leading causes of preventable blindness worldwide, caused by damage to the blood vessels of the retina from prolonged diabetes. Early-stage DR is frequently asymptomatic, and manual screening requires ophthalmologists to review high-resolution fundus photographs — a process that doesn't scale well in regions with a low specialist-to-patient ratio.
+
+This project builds an **explainable, end-to-end diagnostic pipeline** that classifies fundus images into the five official DR severity levels, applies Grad-CAM to visually highlight what the model is focusing on, and serves predictions through a clinician-friendly web dashboard — bridging the gap between raw model output and clinical trust.
+
+---
+
+## 🛠️ Built With
+
+**Backend / ML**
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-EfficientNet--B3-EE4C2C)
+![Gradio](https://img.shields.io/badge/Gradio-5.49.1-orange)
+![OpenCV](https://img.shields.io/badge/OpenCV-Image%20Preprocessing-5C3EE8)
+
+**Frontend**
+![Next.js](https://img.shields.io/badge/Next.js-14.2.3-black)
+![React](https://img.shields.io/badge/React-18.3.1-61DAFB)
+
 ---
 
 ## 📁 Project Structure
@@ -34,6 +58,14 @@ An end-to-end deep learning pipeline to classify Diabetic Retinopathy severity f
 ├── next.config.js                    # Next.js bundler settings
 └── README.md                         # Project documentation
 ```
+
+---
+
+## 🗂️ Dataset
+
+The model is trained on the **Diabetic Retinopathy 224x224 (2019 Data)** dataset from Kaggle, containing labeled fundus photographs across 5 severity classes (No DR, Mild, Moderate, Severe, Proliferative DR).
+
+🔗 [Kaggle Dataset — sovitrath/diabetic-retinopathy-224x224-2019-data](https://www.kaggle.com/datasets/sovitrath/diabetic-retinopathy-224x224-2019-data)
 
 ---
 
@@ -78,7 +110,6 @@ Below is the output for a healthy retina. The preprocessed view reveals clear ma
 
 ---
 
-
 ## 🎨 Premium Features
 
 1. **Dual Premium Modes**: Elegant transition between dark cyber-obsidian and glassmorphic light theme presets.
@@ -92,24 +123,24 @@ Below is the output for a healthy retina. The preprocessed view reveals clear ma
 
 ### 1. Python ML Backend
 1. Install dependencies:
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 2. Run the local backend server:
-   ```bash
+```bash
    python app.py
-   ```
+```
    Open `http://127.0.0.1:7860` to access the local Gradio interface.
 
 ### 2. Next.js Web Dashboard
 1. Install node dependencies in the root folder:
-   ```bash
+```bash
    npm install
-   ```
+```
 2. Launch the local development server:
-   ```bash
+```bash
    npm run dev
-   ```
+```
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
@@ -125,3 +156,27 @@ Below is the output for a healthy retina. The preprocessed view reveals clear ma
 2. Link your repository to a new project in [Vercel](https://vercel.com/).
 3. Vercel will automatically build and deploy your Next.js application at a public link.
 4. Click the gear icon (`⚙️`) in your website's header to save your Hugging Face Space path (e.g. `venmugilrajan/Diabetic_Retinopathy`) so your Vercel frontend automatically connects to the model in the cloud!
+
+---
+
+## 🔮 Future Scope
+
+1. **Lesion Segmentation Integration** — Adding a U-Net head alongside the classifier to produce pixel-level segmentation masks for microaneurysms and hard exudates.
+2. **Automated Patient Report Generation** — Exporting clinical observations, annotations, and model confidence scores into standardized PDF reports.
+3. **Cloud Synchronization** — Connecting the annotation database with hospital Electronic Health Record (EHR) systems using FHIR standards.
+
+---
+
+## 👥 Team — The Pixels
+
+| Name | Registration No. |
+| :--- | :--- |
+| Nishsal A T | 7376241CS301 |
+| Nitish Priyan R S | 7376241CS311 |
+| Venmugil Rajan S | 7376241CS456 |
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
