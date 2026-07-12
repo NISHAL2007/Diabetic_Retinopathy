@@ -10,7 +10,7 @@ pinned: false
 license: mit
 python_version: "3.10"
 ---
-# Live view : https://diaretino.vercel.app/
+# Live view : https://huggingface.co/spaces/venmugilrajan/Diabetic_Retinopathy
 # 👁️ Diabetic Retinopathy Classification System
 
 An end-to-end deep learning pipeline to classify Diabetic Retinopathy severity from retinal fundus images using PyTorch, EfficientNet-B3, Focal Loss, and a premium Next.js dashboard + Gradio console.
