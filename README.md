@@ -94,7 +94,6 @@ Overall **accuracy: 71%** across 5 classification levels.
 | **Macro Avg** | | 0.56 | 0.63 | 0.56 | 732 |
 | **Weighted Avg** | | 0.79 | 0.71 | 0.72 | 732 |
 
-
 ---
 
 ## 🖼️ Results and Outputs
@@ -164,6 +163,21 @@ This directory is configured with Gradio Space frontmatter metadata. Push `app.p
 1. **Lesion Segmentation** — add a U-Net head alongside the classifier for pixel-level segmentation of microaneurysms and hard exudates.
 2. **Automated Patient Reports** — export clinical observations, annotations, and confidence scores as standardized PDF reports.
 3. **EHR Integration** — connect the annotation database to hospital Electronic Health Record systems using FHIR standards.
+
+---
+
+## 🙏 Acknowledgments
+
+This project uses the following third-party datasets, pre-trained models, techniques, and open-source libraries:
+
+- **Dataset:** [Diabetic Retinopathy 224x224 (2019 Data)](https://www.kaggle.com/datasets/sovitrath/diabetic-retinopathy-224x224-2019-data) — Kaggle, courtesy of the original APTOS 2019 Blindness Detection competition contributors.
+- **Pre-trained Backbone:** EfficientNet-B3, pre-trained on ImageNet, via [PyTorch / torchvision](https://pytorch.org/vision/stable/models.html), fine-tuned for this project.
+- **Focal Loss:** Lin et al., *"Focal Loss for Dense Object Detection"* (2017) — adapted here for class-imbalanced classification.
+- **Grad-CAM:** Selvaraju et al., *"Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization"* (2017).
+- **Graham Preprocessing:** contrast-enhancement technique popularized by Ben Graham's approach in the original 2015 Kaggle DR Detection competition.
+- **Core Libraries:** PyTorch, OpenCV, Gradio, Next.js, React — see badges above for versions.
+
+All code, model training, and interface design in this repository are original work by Team The Pixels, built on top of the above open-source and public resources.
 
 ---
 
