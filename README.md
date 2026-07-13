@@ -94,7 +94,6 @@ Overall **accuracy: 71%** across 5 classification levels.
 | **Macro Avg** | | 0.56 | 0.63 | 0.56 | 732 |
 | **Weighted Avg** | | 0.79 | 0.71 | 0.72 | 732 |
 
-> **Note on class imbalance:** Classes 1, 3, and 4 have noticeably lower precision than Class 0, reflecting their smaller sample sizes (49–58 images vs. 364 for No DR). Focal Loss and class weighting were used to mitigate this, but severity-level performance remains an area for improvement — see Limitations below.
 
 ---
 
