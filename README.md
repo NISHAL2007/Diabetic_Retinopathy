@@ -29,6 +29,34 @@ This project implements an **explainable, end-to-end diagnostic pipeline** that 
 
 ---
 
+## ❗ Problem Statement
+
+Diabetic Retinopathy is a leading cause of preventable blindness, caused by prolonged high blood sugar damaging retinal blood vessels. It is asymptomatic in early stages, and diagnosis requires specialist ophthalmologists and equipment that aren't accessible to everyone — especially in rural or underserved areas. This delays detection until damage is often irreversible.
+
+---
+
+## 🎯 Objective
+
+To build an accurate, explainable deep learning system that classifies retinal fundus images into DR severity levels, enabling fast, accessible first-line screening in settings with limited specialist access.
+
+---
+
+## 💡 Proposed Solution
+
+An AI-powered diagnostic tool that takes a retinal fundus image as input and classifies it into one of five DR severity levels — No DR, Mild, Moderate, Severe, or Proliferative — using a fine-tuned EfficientNet-B3 deep learning model. The system uses class-balanced Focal Loss to handle the natural imbalance in DR datasets (healthy cases far outnumber severe ones) and applies contrast-enhancement preprocessing to make subtle lesions more visible to the model. It is deployed as a live web app, giving users instant severity predictions with confidence scores — enabling fast, accessible first-line screening without requiring specialist access upfront.
+
+---
+
+## 🧩 Methodology / Model Architecture
+
+1. **Preprocessing:** Fundus images undergo Ben Graham-style contrast enhancement (Gaussian blur subtraction) to make microaneurysms, hemorrhages, and exudates more visible before being fed to the model.
+2. **Backbone:** EfficientNet-B3, pre-trained on ImageNet, fine-tuned on the labeled DR dataset for 5-class severity classification.
+3. **Loss Function:** Class-weighted Focal Loss, chosen over standard cross-entropy to reduce the impact of severe class imbalance (364 "No DR" samples vs. as few as 49 for "Severe NPDR").
+4. **Interpretability:** Grad-CAM is applied post-inference to generate a heatmap over the regions the model weighted most heavily, giving clinicians visibility into *why* a prediction was made rather than a black-box output.
+5. **Serving:** The trained model is served through a Gradio backend (hosted on Hugging Face Spaces), with a Next.js/React frontend dashboard consuming its predictions for a clinician-facing interface.
+
+---
+
 ## 🛠️ Built With
 
 **Backend / ML**
